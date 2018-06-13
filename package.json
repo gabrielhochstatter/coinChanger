@@ -1,0 +1,23 @@
+{
+  "name": "coinchanger",
+  "version": "1.0.0",
+  "description": "A kata for calculating the optimal way to give change in the smallest amount of coins",
+  "main": "index.js",
+  "scripts": {
+    "test": "istanbul cover jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielhochstatter/coinChanger.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielhochstatter/coinChanger/issues"
+  },
+  "homepage": "https://github.com/gabrielhochstatter/coinChanger#readme",
+  "dependencies": {
+    "istanbul": "^0.4.5",
+    "jasmine": "^3.1.0"
+  }
+}
