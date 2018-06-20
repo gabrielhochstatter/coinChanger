@@ -97,4 +97,36 @@ describe("coinChanger", function(){
     });
   });
 
+  describe("numberOfCoins", function(){
+    it("should return correct amount of coins for the values passed in", function(){
+      var cents = 100;
+      var coinValue = 25;
+      var expected = 4;
+      expect(testChanger.numberOfCoins(cents, coinValue)).toEqual(expected);
+    });
+
+    it("should return correct amount of coins for the values passed in", function(){
+      var cents = 84;
+      var coinValue = 25;
+      var expected = 3;
+      expect(testChanger.numberOfCoins(cents, coinValue)).toEqual(expected);
+    });
+
+    it("should return correct amount of coins for the values passed in", function(){
+      var cents = 6;
+      var coinValue = 1;
+      var expected = 6;
+      expect(testChanger.numberOfCoins(cents, coinValue)).toEqual(expected);
+    });
+
+    // it("changes the remainder by the correct amount", function(){
+    //   var cents = 100;
+    //   var coinValue = 25;
+    //   var expected = 4;
+    //   expect(testChanger.numberOfCoins(cents, coinValue)).toEqual(expected);
+    // });
+  });
+
+  
+
 });

@@ -8,10 +8,10 @@ exports.Changer = function(){
   this.calculateCoins = function(amount) {
     this.remainder = amount;
     var output = {
-      quarters: this.numberOfQuarters(this.remainder),
-      dimes: this.numberOfDimes(this.remainder),
-      nickels: this.numberOfNickels(this.remainder),
-      pennies: this.numberOfPennies(this.remainder),
+      quarters: this.numberOfCoins(this.remainder, 25),
+      dimes: this.numberOfCoins(this.remainder, 10),
+      nickels: this.numberOfCoins(this.remainder, 5),
+      pennies: this.numberOfCoins(this.remainder, 1),
     };
     return output;
   };
@@ -36,5 +36,11 @@ exports.Changer = function(){
 
   this.numberOfPennies = function(cents) {
     return cents;
+  };
+
+  this.numberOfCoins = function(cents, coinValue) {
+    var coins = Math.floor(cents / coinValue);
+    this.remainder -= coins * coinValue;
+    return coins;
   };
 };
