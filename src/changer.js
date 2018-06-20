@@ -16,28 +16,6 @@ exports.Changer = function(){
     return output;
   };
 
-  this.numberOfQuarters = function(cents) {
-    var quarters = Math.floor(cents / 25);
-    this.remainder -= quarters * 25;
-    return quarters;
-  };
-
-  this.numberOfDimes = function(cents) {
-    var dimes = Math.floor(cents / 10);
-    this.remainder -= dimes * 10;
-    return dimes;
-  };
-
-  this.numberOfNickels = function(cents) {
-    var nickels = Math.floor(cents / 5);
-    this.remainder -= nickels * 5;
-    return nickels;
-  };
-
-  this.numberOfPennies = function(cents) {
-    return cents;
-  };
-
   this.numberOfCoins = function(cents, coinValue) {
     var coins = Math.floor(cents / coinValue);
     this.remainder -= coins * coinValue;
