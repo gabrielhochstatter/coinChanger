@@ -6,25 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Coin Change Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <link rel="stylesheet" href="style/styles.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 
   </head>
 
   <body>
 
-    <main role="main" class="container">
+    <section class="section">
+      <div class="container">
+        <div class="">
+          <h1 class="title  is-text-centered">Change Calculator</h1>
+        </div>
+        <div id="changerApp" class="columns">
+          <div class="column">
+            <div v-for="(amount, coin) in coins">
+              <p class=" is-text-centered">{{ coin }}: {{ amount }}</p>
+            </div>
+            <div class="control">
+                <input class="input"
+                type="number"
+                v-model="cents"
+                placeholder="Enter amount in cents"
 
-      <div class="starter-template">
-        <h1>Change Calculator</h1>
-        <div id="changerApp">
-          <p>quarters: {{ coins.quarters }}</p>
-          <p>dimes: {{ coins.dimes }}</p>
-          <p>nickels: {{ coins.nickels }}</p>
-          <p>pennies: {{ coins.pennies }}</p>
-          <input type="number" v-model="cents" v-on:input="calculator(coins)">
+                v-on:input="calculator(coins)">
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="column">
+              <p>Select Currency:</p>
+            </div>
+            <div class="column">
+              <div class="select">
+                <select v-model="currentCurrency" @change="updateCurrency(currentCurrency)">
+                  <option selected disabled>Choose Currency</option>
+                  <option v-for="currency in currencies"
+                  v-bind:value="currency.currency">
+                    {{ currency.name }}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </main>
+    </section>
     <script src="src/changerClient.js"></script>
   </body>
 </html>
