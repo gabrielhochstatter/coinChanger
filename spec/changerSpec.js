@@ -2,8 +2,15 @@ var changer = require("../src/changer.js");
 
 describe("coinChanger", function(){
   var testChanger;
+  var usd;
   beforeEach(function(){
-    testChanger = new changer.Changer();
+    usd = {
+      quarters: 25,
+      dimes: 10,
+      nickels: 5,
+      pennies: 1
+    };
+    testChanger = new changer.Changer(usd);
   });
 
   describe("calculateCoins", function(){
